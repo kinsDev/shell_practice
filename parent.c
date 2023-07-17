@@ -1,4 +1,5 @@
 #include <stdio.h>
+<<<<<<< HEAD
 
 #ifdef _WIN32
 #include <windows.h>
@@ -28,3 +29,20 @@ int main(void)
     return 0;
 }
 
+=======
+#include <unistd.h>
+
+int main(void)
+{
+	int a = 10;
+	int b = 10;
+	int result = a * b;
+
+	pid_t ppid = getppid();
+
+	printf("Multplication result is: %u\n", result);
+	printf("ppid is: %u\n", ppid);
+
+	return 0;
+}
+>>>>>>> 549b360eb7f81151ff25fd97d7f974919d41b9bd
