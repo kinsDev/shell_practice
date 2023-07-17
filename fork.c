@@ -3,29 +3,21 @@
 
 int main(void)
 {
+	pid_t my_pid;
 	pid_t pid;
 
-	printf("Before fork I was one\n");
-
+	printf("Before fork\n");
 	pid = fork();
 
 	if(pid == -1)
 	{
-		perror("Was unsuccessful\n");
+		perror("Error:\n");
 		return 1;
 	}
+	printf("After fork\n");
 
-	if(pid == 0)
-	{
-		printf("I am the child process\n");
-	}
-
-	else
-	{
-		printf("I am the parent process\n");
-	}
-
-	printf("After fork I became two\n");
+	my_pid = getpid();
+	printf("My pid is: %u\n", my_pid);
 
 	return 0;
 }
