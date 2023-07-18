@@ -3,10 +3,9 @@
 
 int main(void)
 {
-	pid_t my_pid;
 	pid_t pid;
+	pid_t ppid;
 
-	printf("Before fork\n");
 	pid = fork();
 
 	if(pid == -1)
@@ -14,10 +13,20 @@ int main(void)
 		perror("Error:\n");
 		return 1;
 	}
-	printf("After fork\n");
 
-	my_pid = getpid();
-	printf("My pid is: %u\n", my_pid);
+	if(pid == 0)
+	{
+		sleep(40);
+		printf("I am the child\n");
+		pid = getpid();
+		printf("Child pid is: %u\n", pid);
+	}
+
+	else
+	{
+		ppid = getpid();
+		printf("Parent pid is: %u\n", ppid);
+	}
 
 	return 0;
 }
