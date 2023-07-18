@@ -9,7 +9,7 @@ int main(void)
 	char *buf = malloc(sizeof(char) * n);
 
 	//get line takes in the buffer and size  address
-	//stdin is for the keyboard input 
+	//stdin is for the keyboard input - *stream 
 	printf("Enter name: ");
 	getline(&buf, &n, stdin);
 
