@@ -7,4 +7,3 @@ void sigint_handler(int __attribute__((unused)) s)
 {
 	write(1, "\n($) ", 5);
 }
-

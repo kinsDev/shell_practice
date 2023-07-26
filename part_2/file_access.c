@@ -165,7 +165,4 @@ char *get_number(int n)
 		tmp = (n % 10) >= 0 ? n % 10 : -(n % 10);
 		buf[i] = tmp + '0';
 	}
-
-	return (buf);
 }
-
